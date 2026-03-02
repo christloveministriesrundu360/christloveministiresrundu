@@ -14,45 +14,47 @@
             --border: rgba(255, 255, 255, 0.15);
         }
 
-        * { box-sizing: border-box; scroll-behavior: smooth; }
+        * { box-sizing: border-box; scroll-behavior: smooth; transition: 0.4s ease; }
 
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle at top, #001f3f, #000814 70%);
+            background: radial-gradient(circle at top, #001f3f, #000814 80%);
             background-attachment: fixed;
             color: white;
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- STICKY HEADER --- */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 8, 20, 0.8);
+            background: rgba(0, 8, 20, 0.85);
             backdrop-filter: blur(15px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
         }
 
-        .nav-logo {
-            height: 50px; /* Small version for the header bar */
-        }
+        .nav-logo { height: 45px; }
 
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 20px;
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            opacity: 0.8;
         }
+
+        nav a:hover { opacity: 1; color: var(--electric-blue); }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -66,133 +68,148 @@
         }
 
         .main-logo-circle {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             background: var(--glass);
             border: 2px solid white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 40px rgba(0, 162, 255, 0.3);
-            margin-bottom: 30px;
+            box-shadow: 0 0 50px rgba(0, 162, 255, 0.3);
+            margin-bottom: 35px;
+            animation: glowPulse 4s infinite alternate;
         }
 
-        .main-logo-circle img {
-            width: 70%;
-            height: auto;
+        @keyframes glowPulse {
+            from { box-shadow: 0 0 30px rgba(0, 162, 255, 0.2); }
+            to { box-shadow: 0 0 60px rgba(0, 162, 255, 0.5); }
         }
+
+        .main-logo-circle img { width: 75%; height: auto; }
 
         .anchor-scripture {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-size: clamp(1.8rem, 5vw, 3.8rem);
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 15px;
-            max-width: 900px;
+            max-width: 1000px;
         }
 
         .vina-subtitle {
             font-style: italic;
             color: var(--electric-blue);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 40px;
         }
 
-        /* --- CONTENT SECTIONS --- */
+        /* --- SCROLLING SECTIONS --- */
         section {
-            padding: 100px 10%;
-            max-width: 1100px;
+            padding: 120px 10%;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .glass-panel {
             background: var(--glass);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border);
-            border-radius: 40px;
-            padding: 60px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border-radius: 50px;
+            padding: 70px 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
         }
 
         h2 {
             font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
             text-align: center;
             color: var(--electric-blue);
+            letter-spacing: 2px;
         }
 
-        .mission-text {
-            font-size: 1.15rem;
-            text-align: center;
-        }
+        .mission-text { font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto; }
 
-        .belief-box {
+        .believers-script {
+            margin-top: 50px;
+            padding-top: 40px;
             border-top: 1px solid var(--border);
-            margin-top: 40px;
-            padding-top: 30px;
             text-align: center;
             font-style: italic;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            color: #a0c4ff;
         }
 
-        /* --- SERVICE TIMES GRID --- */
+        /* --- SERVICES --- */
         .times-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
         }
 
         .time-card {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.04);
             border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 25px;
+            padding: 40px 20px;
+            border-radius: 30px;
             text-align: center;
         }
 
-        .time-card h3 { font-family: 'Cinzel', serif; margin-bottom: 10px; }
+        .time-card h3 { font-family: 'Cinzel', serif; margin-bottom: 10px; font-size: 1.1rem; }
 
         /* --- MUSIC SECTION --- */
         .music-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px;
+            padding: 25px;
             background: rgba(255,255,255,0.05);
             margin-bottom: 15px;
-            border-radius: 20px;
+            border-radius: 25px;
+            border: 1px solid transparent;
         }
+
+        .music-item:hover { border-color: var(--electric-blue); background: rgba(0, 162, 255, 0.05); }
 
         audio {
             filter: invert(100%) hue-rotate(180deg) brightness(1.5);
             height: 35px;
         }
 
-        /* --- MAP AREA --- */
-        .map-frame {
+        /* --- 360 MAP SECTION --- */
+        .map-wrapper {
             width: 100%;
-            height: 450px;
+            height: 500px;
             border-radius: 40px;
+            overflow: hidden;
             border: 2px solid var(--border);
-            margin-top: 30px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
 
         footer {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: #00040a;
-            font-size: 0.8rem;
-            opacity: 0.6;
             border-top: 1px solid var(--border);
         }
 
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--electric-blue);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
         @media (max-width: 768px) {
-            .glass-panel { padding: 30px; }
-            section { padding: 60px 5%; }
-            .anchor-scripture { font-size: 2rem; }
+            .glass-panel { padding: 40px 20px; }
+            section { padding: 80px 5%; }
+            .anchor-scripture { font-size: 2.2rem; }
+            .music-item { flex-direction: column; gap: 15px; text-align: center; }
         }
     </style>
 </head>
@@ -202,7 +219,7 @@
         <img src="Title Logo.png" alt="CLM Logo" class="nav-logo">
         <nav>
             <a href="#home">Home</a>
-            <a href="#vision">Vision</a>
+            <a href="#vision">Mission</a>
             <a href="#music">Music</a>
             <a href="#location">Location</a>
         </nav>
@@ -214,29 +231,34 @@
         </div>
         <h1 class="anchor-scripture">"If the foundations be destroyed, what can the righteous do?"</h1>
         <p class="vina-subtitle">Vina Wapa Vina Waperere.</p>
-        <p style="text-transform: uppercase; letter-spacing: 4px; font-weight: 700;">Come Worship with us</p>
+        <p style="text-transform: uppercase; letter-spacing: 5px; font-weight: 700; color: white; opacity: 0.9;">Come Worship with us</p>
     </div>
 
     <section id="vision">
         <div class="glass-panel">
             <h2>Our Vision</h2>
-            <p class="mission-text" style="font-size: 1.5rem; font-weight: 600;">"Christ-like faith, righteousness and holiness for all nations."</p>
-            
-            <h2 style="margin-top: 60px;">Our Mission</h2>
+            <p class="mission-text" style="font-size: 1.8rem; font-weight: 700; color: white;">
+                "Christ-like faith, righteousness and holiness for all nations."
+            </p>
+        </div>
+    </section>
+
+    <section id="mission">
+        <div class="glass-panel">
+            <h2>Our Mission</h2>
             <p class="mission-text">
                 As we receive the love and mercy of God we lift up the name of the Lord in powerful spiritual warfare and intercession wherever the Holy Ghost leads us, we plant churches, teach and demonstrate the love of God that passes all understanding that all might accept Jesus Christ as their all in all.
             </p>
-
-            <div class="belief-box">
-                <p>"Surely Goodness and Mercy Shall follow us all the days of our lives and we shall dwell in the house of the lord forever amen"</p>
+            <div class="believers-script">
+                "Surely Goodness and Mercy Shall follow us all the days of our lives and we shall dwell in the house of the lord forever amen"
             </div>
         </div>
     </section>
 
     <section id="services">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <p style="color: var(--electric-blue); text-transform: uppercase; letter-spacing: 2px;">Apostle & District Overseer</p>
-            <h2 style="margin-top: 5px;">Apostle Joseph Kandjeke Likoro</h2>
+        <div style="text-align: center; margin-bottom: 70px;">
+            <p style="color: var(--electric-blue); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem;">Apostle & District Overseer</p>
+            <h2 style="margin-top: 5px; font-size: 3rem;">Apostle Joseph Kandjeke Likoro</h2>
         </div>
 
         <h2>Service Times</h2>
@@ -247,7 +269,7 @@
             </div>
             <div class="time-card">
                 <h3>Monday Prayer</h3>
-                <p>18:00 PM<br><small>Intercessors Gather</small></p>
+                <p>18:00 PM<br><small style="color: var(--electric-blue);">Intercessors Gather</small></p>
             </div>
             <div class="time-card">
                 <h3>Wednesday</h3>
@@ -259,9 +281,9 @@
             </div>
         </div>
 
-        <div class="glass-panel" style="margin-top: 40px; border: 1px solid var(--electric-blue); text-align: center; padding: 40px;">
-            <h3 style="font-family: 'Cinzel', serif;">Spiritual Warfare Night</h3>
-            <p>Every last Friday of each month</p>
+        <div class="glass-panel" style="margin-top: 50px; border: 2px solid var(--electric-blue); text-align: center; padding: 50px;">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem;">Spiritual Warfare Night</h3>
+            <p style="font-size: 1.2rem;">Every last Friday of each month</p>
         </div>
     </section>
 
@@ -269,40 +291,56 @@
         <div class="glass-panel">
             <h2>Spiritual Songs</h2>
             <div class="music-item">
-                <span>1. Are First</span>
+                <span><strong>1.</strong> Are First</span>
                 <audio controls src="are first.mp3"></audio>
             </div>
             <div class="music-item">
-                <span>2. Hompa Wande</span>
+                <span><strong>2.</strong> Hompa Wande</span>
                 <audio controls src="hompa wande.mp3"></audio>
             </div>
-            <div class="music-item">
-                <span>3. Kwandi Yesu</span>
+            <div class="music-item)
+                <span><strong>3.</strong> Kwandi Yesu</span>
                 <audio controls src="kwandi Yesu.mp3"></audio>
             </div>
             <div class="music-item">
-                <span>4. Mpandu</span>
+                <span><strong>4.</strong> Mpandu</span>
                 <audio controls src="mpandu.mp3"></audio>
             </div>
         </div>
     </section>
 
     <section id="location">
-        <h2>Visit Us</h2>
+        <h2>Our Location</h2>
         <div class="glass-panel" style="text-align: center;">
-            <p><strong>Address:</strong> 3QFH+WW, Rundu, Namibia</p>
-            <p><strong>Phone:</strong> +264 81 478 7184</p>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                <strong>Rundu, Namibia</strong><br>
+                Plus Code: 3QFH+WW, Rundu | Phone: +264 81 478 7184
+            </p>
             
-            <iframe class="map-frame" 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.43560737152!2d19.7570451!3d-17.9126279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19662b2169996d91%3A0x6b479366e4a64f51!2sRundu%2C%20Namibia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s8" 
-                frameborder="0" allowfullscreen>
-            </iframe>
+            <div class="map-wrapper">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0" 
+                    src="https://www.google.com/maps/embed/v1/streetview?key=YOUR_API_KEY_HERE&location=-17.9135,19.7656&heading=210&pitch=10&fov=90" 
+                    allowfullscreen>
+                </iframe>
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    src="https://maps.google.com/maps?q=3QFH+WW%20Rundu%20Namibia&t=k&z=19&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Christ Love Ministries Rundu Branch | All Rights Reserved</p>
-        <p>Righteousness and Holiness for All Nations</p>
+        <p>© 2026 Christ Love Ministries Rundu Branch</p>
+        <p style="opacity: 0.7; font-size: 0.75rem;">Righteousness and Holiness for All Nations</p>
+        <a href="#home" class="back-to-top">↑ Back to Top</a>
     </footer>
 
 </body>
