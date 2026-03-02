@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Christ Love Ministries Rundu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-navy: #000814;
+            --spiritual-blue: #001d3d;
+            --electric-blue: #00a2ff;
+            --glass: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.15);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top, #001f3f, #000814 70%);
+            background-attachment: fixed;
+            color: white;
+            line-height: 1.8;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 8, 20, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            height: 50px; /* Small version for the header bar */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .main-logo-circle {
+            width: 200px;
+            height: 200px;
+            background: var(--glass);
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgba(0, 162, 255, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .main-logo-circle img {
+            width: 70%;
+            height: auto;
+        }
+
+        .anchor-scripture {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            max-width: 900px;
+        }
+
+        .vina-subtitle {
+            font-style: italic;
+            color: var(--electric-blue);
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        /* --- CONTENT SECTIONS --- */
+        section {
+            padding: 100px 10%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 60px;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--electric-blue);
+        }
+
+        .mission-text {
+            font-size: 1.15rem;
+            text-align: center;
+        }
+
+        .belief-box {
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+            padding-top: 30px;
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* --- SERVICE TIMES GRID --- */
+        .times-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .time-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .time-card h3 { font-family: 'Cinzel', serif; margin-bottom: 10px; }
+
+        /* --- MUSIC SECTION --- */
+        .music-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            margin-bottom: 15px;
+            border-radius: 20px;
+        }
+
+        audio {
+            filter: invert(100%) hue-rotate(180deg) brightness(1.5);
+            height: 35px;
+        }
+
+        /* --- MAP AREA --- */
+        .map-frame {
+            width: 100%;
+            height: 450px;
+            border-radius: 40px;
+            border: 2px solid var(--border);
+            margin-top: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #00040a;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .glass-panel { padding: 30px; }
+            section { padding: 60px 5%; }
+            .anchor-scripture { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Title Logo.png" alt="CLM Logo" class="nav-logo">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#vision">Vision</a>
+            <a href="#music">Music</a>
+            <a href="#location">Location</a>
+        </nav>
+    </header>
+
+    <div class="hero" id="home">
+        <div class="main-logo-circle">
+            <img src="Title Logo.png" alt="Christ Love Ministries Logo">
+        </div>
+        <h1 class="anchor-scripture">"If the foundations be destroyed, what can the righteous do?"</h1>
+        <p class="vina-subtitle">Vina Wapa Vina Waperere.</p>
+        <p style="text-transform: uppercase; letter-spacing: 4px; font-weight: 700;">Come Worship with us</p>
+    </div>
+
+    <section id="vision">
+        <div class="glass-panel">
+            <h2>Our Vision</h2>
+            <p class="mission-text" style="font-size: 1.5rem; font-weight: 600;">"Christ-like faith, righteousness and holiness for all nations."</p>
+            
+            <h2 style="margin-top: 60px;">Our Mission</h2>
+            <p class="mission-text">
+                As we receive the love and mercy of God we lift up the name of the Lord in powerful spiritual warfare and intercession wherever the Holy Ghost leads us, we plant churches, teach and demonstrate the love of God that passes all understanding that all might accept Jesus Christ as their all in all.
+            </p>
+
+            <div class="belief-box">
+                <p>"Surely Goodness and Mercy Shall follow us all the days of our lives and we shall dwell in the house of the lord forever amen"</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <p style="color: var(--electric-blue); text-transform: uppercase; letter-spacing: 2px;">Apostle & District Overseer</p>
+            <h2 style="margin-top: 5px;">Apostle Joseph Kandjeke Likoro</h2>
+        </div>
+
+        <h2>Service Times</h2>
+        <div class="times-grid">
+            <div class="time-card">
+                <h3>Sunday Service</h3>
+                <p>08:00 AM</p>
+            </div>
+            <div class="time-card">
+                <h3>Monday Prayer</h3>
+                <p>18:00 PM<br><small>Intercessors Gather</small></p>
+            </div>
+            <div class="time-card">
+                <h3>Wednesday</h3>
+                <p>18:00 PM<br><small>Bible Study</small></p>
+            </div>
+            <div class="time-card">
+                <h3>Friday Prayer</h3>
+                <p>18:00 PM</p>
+            </div>
+        </div>
+
+        <div class="glass-panel" style="margin-top: 40px; border: 1px solid var(--electric-blue); text-align: center; padding: 40px;">
+            <h3 style="font-family: 'Cinzel', serif;">Spiritual Warfare Night</h3>
+            <p>Every last Friday of each month</p>
+        </div>
+    </section>
+
+    <section id="music">
+        <div class="glass-panel">
+            <h2>Spiritual Songs</h2>
+            <div class="music-item">
+                <span>1. Are First</span>
+                <audio controls src="are first.mp3"></audio>
+            </div>
+            <div class="music-item">
+                <span>2. Hompa Wande</span>
+                <audio controls src="hompa wande.mp3"></audio>
+            </div>
+            <div class="music-item">
+                <span>3. Kwandi Yesu</span>
+                <audio controls src="kwandi Yesu.mp3"></audio>
+            </div>
+            <div class="music-item">
+                <span>4. Mpandu</span>
+                <audio controls src="mpandu.mp3"></audio>
+            </div>
+        </div>
+    </section>
+
+    <section id="location">
+        <h2>Visit Us</h2>
+        <div class="glass-panel" style="text-align: center;">
+            <p><strong>Address:</strong> 3QFH+WW, Rundu, Namibia</p>
+            <p><strong>Phone:</strong> +264 81 478 7184</p>
+            
+            <iframe class="map-frame" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.43560737152!2d19.7570451!3d-17.9126279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19662b2169996d91%3A0x6b479366e4a64f51!2sRundu%2C%20Namibia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s8" 
+                frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Christ Love Ministries Rundu Branch | All Rights Reserved</p>
+        <p>Righteousness and Holiness for All Nations</p>
+    </footer>
+
+</body>
+</html>
