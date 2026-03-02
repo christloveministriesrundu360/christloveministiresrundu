@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Christ Love Ministries Rundu Branch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --deep-blue: #001f3f;
+            --electric-blue: #0078d4;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --text-white: #ffffff;
+            --text-subtle: #d1e8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000c1a 0%, #003366 100%);
+            background-attachment: fixed;
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        /* Glassmorphism Utility */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 6%;
+            background: rgba(0, 31, 63, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        header img {
+            height: 65px;
+            transition: transform 0.3s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--electric-blue);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 12, 26, 0.7), rgba(0, 51, 102, 0.7)), 
+                        url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-box {
+            max-width: 850px;
+            padding: 50px 30px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-subtle);
+            margin-bottom: 35px;
+        }
+
+        .btn-main {
+            padding: 15px 45px;
+            background: #ffffff;
+            color: var(--deep-blue);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-main:hover {
+            background: var(--electric-blue);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 120, 212, 0.6);
+        }
+
+        section {
+            padding: 100px 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .vision-container {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            padding: 40px 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .info-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--electric-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Map Section Styling */
+        .map-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--glass-border);
+        }
+
+        .contact-details h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #000913;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-subtle);
+        }
+
+        /* Mobile View */
+        @media (max-width: 992px) {
+            .map-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            nav {
+                margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav a {
+                margin: 5px 10px;
+                font-size: 0.75rem;
+            }
+            .hero-box {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="Title Logo.png" alt="Christ Love Ministries Logo">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#vision">Vision</a>
+        <a href="#services">Times</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Location</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="hero-box glass-panel">
+        <h1>"If the foundations be destroyed, what can the righteous do?"</h1>
+        <p>Vina Wapa Vina Waperere.</p>
+        <button class="btn-main" onclick="location.href='#contact'">Plan Your Visit</button>
+    </div>
+</div>
+
+<section id="vision">
+    <div class="vision-container">
+        <h2>Our Vision & Mission</h2>
+        <div class="glass-panel" style="padding: 40px; margin-bottom: 40px;">
+            <p style="font-size: 1.2rem; font-weight: 600;">Christ-like faith, righteousness and holiness for all nations.</p>
+            <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 30px 0;">
+            <p>
+                As we receive the love and mercy of God, we lift up the name of the Lord 
+                in powerful spiritual warfare and intercession wherever the Holy Ghost leads us. 
+                We plant churches, teach and demonstrate the love of God that passes all understanding, 
+                that all might accept Jesus Christ as their all in all.
+            </p>
+        </div>
+        
+        <div class="glass-panel" style="padding: 30px;">
+            <h3 style="font-family: 'Cinzel', serif;">What We Believe</h3>
+            <p>"Surely Goodness and Mercy shall follow us all the days of our lives and we shall dwell in the house of the Lord forever. Amen."</p>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Service Times</h2>
+    <div class="grid-layout">
+        <div class="info-card glass-panel">
+            <h3>Sunday</h3>
+            <p>Main Worship Service</p>
+            <p><strong>08:00 AM</strong></p>
+        </div>
+        <div class="info-card glass-panel">
+            <h3>Monday</h3>
+            <p>Intercessors Meeting</p>
+            <p><strong>18:00 PM</strong></p>
+        </div>
+        <div class="info-card glass-panel">
+            <h3>Wednesday</h3>
+            <p>Bible Study</p>
+            <p><strong>18:00 PM</strong></p>
+        </div>
+        <div class="info-card glass-panel">
+            <h3>Friday</h3>
+            <p>Prayer Session</p>
+            <p><strong>18:00 PM</strong></p>
+        </div>
+    </div>
+</section>
+
+<section id="events">
+    <h2>Upcoming Events</h2>
+    <div class="glass-panel" style="padding: 40px; text-align: center; max-width: 600px; margin: 0 auto;">
+        <h3 style="font-family: 'Cinzel', serif; color: var(--electric-blue);">Spiritual Warfare Night</h3>
+        <p>Prepare for a night of breakthrough and prayer.</p>
+        <p><strong>Every last Friday of each month</strong></p>
+    </div>
+</section>
+
+<section id="leadership" style="text-align: center;">
+    <h2>Ministry Leadership</h2>
+    <div class="glass-panel" style="display: inline-block; padding: 40px 60px;">
+        <p style="margin: 0; text-transform: uppercase; letter-spacing: 2px; color: var(--electric-blue);">Apostle & District Overseer</p>
+        <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem; margin: 10px 0;">Apostle Joseph Kandjeke Likoro</h3>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="map-section">
+        <div class="contact-details">
+            <h3>Visit Us in Rundu</h3>
+            <p><strong>Address:</strong> 3QFH+WW, Rundu, Namibia</p>
+            <p><strong>Phone:</strong> +264 81 478 7184</p>
+            <p style="margin-top: 20px; color: var(--text-subtle);">
+                Join us at our Rundu Branch for a transformative spiritual experience. 
+                Our doors are open to everyone seeking the love of Christ.
+            </p>
+        </div>
+        <div class="map-frame glass-panel">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d14947.989710323946!2d19.75713291585098!3d-17.9157201993475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x196621568973d725%3A0xc6822467f920f384!2sRundu%2C%20Namibia!5e0!3m2!1sen!2sus!4v1709400000000!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Christ Love Ministries Rundu Branch | All Rights Reserved</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Righteousness and Holiness for All Nations</p>
+</footer>
+
+</body>
+</html>
