@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Christ Love Ministries Rundu Branch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        body {
+        /* Reset */
+        * {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #0a0a0a;
-            color: white;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #d0e7ff, #ffffff);
+            color: #1a1a1a;
+        }
+
+        /* Glassy header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 40px;
-            background: rgba(0,0,0,0.8);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         header img {
@@ -32,15 +43,22 @@
         }
 
         nav a {
-            color: gold;
+            color: #004aad;
             text-decoration: none;
             margin-left: 20px;
             font-weight: 500;
+            transition: color 0.3s;
         }
 
+        nav a:hover {
+            color: #0077ff;
+        }
+
+        /* Hero section */
         .hero {
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1507692049790-de58290a4334');
+            background: linear-gradient(to bottom, rgba(0, 0, 128, 0.4), rgba(255, 255, 255, 0.3)),
+                        url('https://images.unsplash.com/photo-1507692049790-de58290a4334');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -50,64 +68,107 @@
             padding: 20px;
         }
 
+        .hero-content {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: 40px;
-            color: gold;
+            font-size: 38px;
+            color: #004aad;
+            line-height: 1.4;
         }
 
         .hero p {
             font-size: 20px;
             margin-top: 15px;
             font-style: italic;
+            color: #003366;
         }
 
         .hero button {
             margin-top: 25px;
-            padding: 12px 30px;
-            background: gold;
+            padding: 14px 35px;
+            background: rgba(0, 74, 173, 0.7);
+            color: white;
             border: none;
             font-size: 16px;
             cursor: pointer;
             font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.3s;
         }
 
+        .hero button:hover {
+            background: rgba(0, 119, 255, 0.8);
+        }
+
+        /* Sections */
         section {
-            padding: 70px 40px;
+            padding: 80px 40px;
             text-align: center;
         }
 
         h2 {
             font-family: 'Cinzel', serif;
-            color: gold;
+            color: #004aad;
             margin-bottom: 20px;
         }
 
-        .services, .events, .sermons {
-            background: #111;
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #1a1a1a;
         }
 
+        /* Glassy cards */
         .card {
-            background: #1a1a1a;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
             padding: 20px;
             margin: 15px;
-            border: 1px solid gold;
             display: inline-block;
             width: 280px;
             vertical-align: top;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s;
         }
 
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Sections with light blue background */
+        .services, .events, .sermons {
+            background: rgba(0, 119, 255, 0.05);
+        }
+
+        /* Footer */
         footer {
-            background: black;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 30px;
             text-align: center;
             font-size: 14px;
-            border-top: 1px solid gold;
+            border-top: 1px solid rgba(0, 74, 173, 0.5);
         }
 
-        @media(max-width: 768px){
-            .card{
+        /* Responsive */
+        @media(max-width: 768px) {
+            .card {
                 width: 100%;
+            }
+            nav {
+                display: none;
             }
         }
     </style>
@@ -128,7 +189,7 @@
 </header>
 
 <div class="hero">
-    <div>
+    <div class="hero-content">
         <h1>"If the foundations be destroyed, what can the righteous do?"</h1>
         <p>Vina Wapa Vina Waperere.</p>
         <button>Come Worship with us</button>
@@ -141,15 +202,15 @@
 
     <h2>Our Mission</h2>
     <p>
-        As we receive the love and mercy of God, we lift up the name of the Lord 
-        in powerful spiritual warfare and intercession wherever the Holy Ghost leads us. 
-        We plant churches, teach and demonstrate the love of God that passes all understanding, 
+        As we receive the love and mercy of God, we lift up the name of the Lord
+        in powerful spiritual warfare and intercession wherever the Holy Ghost leads us.
+        We plant churches, teach and demonstrate the love of God that passes all understanding,
         that all might accept Jesus Christ as their all in all.
     </p>
 
     <h2>What We Believe</h2>
     <p>
-        Surely Goodness and Mercy shall follow us all the days of our lives 
+        Surely Goodness and Mercy shall follow us all the days of our lives
         and we shall dwell in the house of the Lord forever. Amen.
     </p>
 </section>
