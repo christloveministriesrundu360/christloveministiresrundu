@@ -2,47 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Christ Love Ministries Rundu Branch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <title>Christ's Love Ministries - Rundu</title>
     <style>
         :root {
-            --deep-navy: #000c1a;
-            --royal-blue: #003366;
-            --electric-blue: #00a2ff;
-            --glass-white: rgba(255, 255, 255, 0.12);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --text-pure: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
+            --gold: #d4af37;
+            --glass: rgba(255, 255, 255, 0.1);
+            --dark: #0f0f0f;
         }
 
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle at top, var(--royal-blue), var(--deep-navy));
-            background-attachment: fixed;
-            color: var(--text-pure);
-            line-height: 1.7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Glassmorphism Global Class */
-        .glass {
-            background: var(--glass-white);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px; /* Highly curved edges */
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Centered Logo Branding */
-        .brand-header {
+        /* Centered Circular Glass Emblem */
+        header {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -50,243 +29,202 @@
             text-align: center;
         }
 
-        .logo-circle {
-            width: 180px;
-            height: 180px;
-            background: rgba(255, 255, 255, 0.1);
+        .logo-emblem {
+            width: 150px;
+            height: 150px;
+            background: var(--glass);
             backdrop-filter: blur(10px);
-            border: 2px solid var(--electric-blue);
+            border: 2px solid var(--gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
             margin-bottom: 20px;
-            box-shadow: 0 0 30px rgba(0, 162, 255, 0.3);
-            transition: transform 0.4s ease;
-        }
-
-        .logo-circle:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        .logo-circle img {
-            width: 80%;
-            height: auto;
-            object-fit: contain;
-        }
-
-        /* Navigation Bar */
-        nav {
-            margin-top: 20px;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-pure);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 8px 16px;
-            border-radius: 50px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            background: var(--electric-blue);
-            color: white;
-        }
-
-        /* Hero / Vision Section */
-        .hero {
-            padding: 100px 5%;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 4vw, 3.5rem);
-            margin-bottom: 30px;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.4);
-        }
-
-        .hero-card {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px;
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-family: 'Cinzel', serif;
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            color: var(--electric-blue);
-        }
-
-        /* Grid for Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            padding: 30px;
-            text-align: center;
-            border-radius: 25px;
             transition: transform 0.3s ease;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--electric-blue);
+        .logo-emblem:hover {
+            transform: scale(1.05);
         }
 
-        .service-card h3 {
-            font-family: 'Cinzel', serif;
-            margin-bottom: 10px;
+        .logo-emblem span {
+            font-size: 3rem;
+            color: var(--gold);
+            font-weight: bold;
         }
 
-        /* Map Embed */
-        .map-container {
+        h1 {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* Menu Tabs */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--glass);
+        }
+
+        .tab-btn {
+            background: none;
+            border: 1px solid transparent;
+            color: #ccc;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+            border-radius: 20px;
+        }
+
+        .tab-btn.active {
+            color: var(--gold);
+            border-color: var(--gold);
+            background: var(--glass);
+        }
+
+        /* Exclusive Content Sections */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .tab-content {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block; /* Only show active tab */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Styles */
+        .card {
+            background: var(--glass);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .map-360 {
             width: 100%;
-            height: 450px;
-            border-radius: 30px;
-            overflow: hidden;
-            border: 2px solid var(--glass-border);
-            margin-top: 30px;
+            height: 500px;
+            border-radius: 15px;
+            border: 2px solid var(--gold);
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.4);
-            margin-top: 50px;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        /* Responsive Mobile Fix */
-        @media (max-width: 768px) {
-            .logo-circle {
-                width: 140px;
-                height: 140px;
-            }
-            .hero-card {
-                padding: 30px 15px;
-            }
+        .giving-details {
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin-top: 20px;
         }
     </style>
 </head>
-
 <body>
 
-    <header class="brand-header">
-        <div class="logo-circle">
-            <img src="Title Logo.png" alt="Christ Love Ministries Logo">
-        </div>
-        <nav>
-            <a href="#vision">Our Vision</a>
-            <a href="#services">Times</a>
-            <a href="#events">Events</a>
-            <a href="#leadership">Leadership</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <div class="hero" id="vision">
-        <div class="hero-card glass">
-            <h1>"If the foundations be destroyed, what can the righteous do?"</h1>
-            <p style="font-style: italic; font-size: 1.2rem; color: var(--electric-blue);">Vina Wapa Vina Waperere.</p>
-            <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 30px 0;">
-            <p><strong>Vision:</strong> Christ-like faith, righteousness and holiness for all nations.</p>
-            <p><strong>Mission:</strong> As we receive the love and mercy of God, we lift up the name of the Lord in powerful spiritual warfare and intercession wherever the Holy Ghost leads us. We plant churches, teach and demonstrate the love of God that passes all understanding, that all might accept Jesus Christ as their all in all.</p>
-            <p style="margin-top: 20px; font-weight: 300;">"Surely Goodness and Mercy shall follow us all the days of our lives and we shall dwell in the house of the Lord forever. Amen."</p>
-        </div>
+<header>
+    <div class="logo-emblem">
+        <span>CLM</span>
     </div>
+    <h1>Christ's Love Ministries</h1>
+    <p style="color: #888;">Rundu, Namibia</p>
+</header>
 
-    <section id="services">
-        <h2>Service Times</h2>
-        <div class="services-grid">
-            <div class="service-card glass">
-                <h3>Sunday</h3>
-                <p>Morning Worship</p>
-                <p><strong>08:00 AM</strong></p>
-            </div>
-            <div class="service-card glass">
-                <h3>Monday</h3>
-                <p>Intercessors</p>
-                <p><strong>18:00 PM</strong></p>
-            </div>
-            <div class="service-card glass">
-                <h3>Wednesday</h3>
-                <p>Bible Study</p>
-                <p><strong>18:00 PM</strong></p>
-            </div>
-            <div class="service-card glass">
-                <h3>Friday</h3>
-                <p>Prayer Session</p>
-                <p><strong>18:00 PM</strong></p>
+<nav>
+    <button class="tab-btn active" onclick="openTab(event, 'vision')">Vision</button>
+    <button class="tab-btn" onclick="openTab(event, 'events')">Events</button>
+    <button class="tab-btn" onclick="openTab(event, 'giving')">Giving</button>
+    <button class="tab-btn" onclick="openTab(event, 'location')">360 View</button>
+    <button class="tab-btn" onclick="openTab(event, 'connect')">Connect</button>
+</nav>
+
+<div class="content-container">
+    <section id="vision" class="tab-content active">
+        <div class="card">
+            <h2 style="color: var(--gold);">Our Vision & Mission</h2>
+            <p><strong>Vision:</strong> To be a Christ-centered ministry that demonstrates the unconditional love of God, bringing hope, healing, and restoration to every soul.</p>
+            <p><strong>Mission:</strong> We are committed to preaching the Gospel of Grace, making disciples of all nations, and serving our community in Rundu through acts of love and faith.</p>
+        </div>
+    </section>
+
+    <section id="events" class="tab-content">
+        <div class="card">
+            <h2 style="color: var(--gold);">Upcoming Encounter</h2>
+            <p style="font-size: 1.2rem; line-height: 1.6;">
+                "You are invited to the encounter of Christ... and be blessed through the word of God. Come as you are, and experience a life-transforming atmosphere of worship."
+            </p>
+            <p><em>Check back soon for specific dates and times.</em></p>
+        </div>
+    </section>
+
+    <section id="giving" class="tab-content">
+        <div class="card">
+            <h2 style="color: var(--gold);">Support the Ministry</h2>
+            <p>Your generosity helps us reach more people in the Kavango region.</p>
+            <div class="giving-details">
+                <p><strong>Bank:</strong> Bank Windhoek</p>
+                <p><strong>Account Name:</strong> Christ's Love Ministries</p>
+                <p><strong>Account Number:</strong> 8003456789 (Placeholder)</p>
+                <p><strong>Branch Code:</strong> 482-173</p>
             </div>
         </div>
     </section>
 
-    <section id="events">
-        <h2>Major Events</h2>
-        <div class="glass" style="padding: 40px; text-align: center; max-width: 700px; margin: 0 auto; border: 2px solid var(--electric-blue);">
-            <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem;">Spiritual Warfare Night</h3>
-            <p style="font-size: 1.1rem; color: var(--text-pure);">Join us for an intense night of prayer, deliverance, and spiritual victory.</p>
-            <p style="font-size: 1.3rem; font-weight: 700; color: var(--electric-blue);">Every last Friday of each month</p>
+    <section id="location" class="tab-content">
+        <div class="card">
+            <h2 style="color: var(--gold);">Visit Us Virtually</h2>
+            <p>Explore our surroundings at 3QFH+WW, Rundu.</p>
+            <iframe class="map-360" 
+                src="https://www.google.com/maps/embed?pb=!4v1234567890!6m8!1m2!1s-17.9251142!2s19.7798515!7i13312!8i6656" 
+                allowfullscreen="" loading="lazy">
+            </iframe>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">*Note: The 360-view shows the nearest available Google Street View or Photo Sphere for this location.</p>
         </div>
     </section>
 
-    <section id="leadership" style="text-align: center;">
-        <h2>Ministry Leadership</h2>
-        <div class="glass" style="display: inline-block; padding: 40px 60px;">
-            <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Apostle & District Overseer</p>
-            <h3 style="font-family: 'Cinzel', serif; font-size: 2rem; margin: 10px 0;">Apostle Joseph Kandjeke Likoro</h3>
+    <section id="connect" class="tab-content">
+        <div class="card">
+            <h2 style="color: var(--gold);">Connect With Us</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin: 10px 0;">📱 WhatsApp: +264 81 XXX XXXX</li>
+                <li style="margin: 10px 0;">📧 Email: info@clmrundu.org</li>
+                <li style="margin: 10px 0;">📍 Location: [Christ's Love Ministries](http://googleusercontent.com/map_location_reference/3)</li>
+            </ul>
         </div>
     </section>
+</div>
 
-    <section id="contact">
-        <h2>Visit Us</h2>
-        <div class="glass" style="padding: 40px;">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <p><strong>Location:</strong> Rundu, Namibia</p>
-                <p><strong>Plus Code:</strong> 3QFH+WW, Rundu</p>
-                <p><strong>Phone:</strong> +264 81 478 7184</p>
-            </div>
-            
-            <div class="map-container">
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    frameborder="0" 
-                    scrolling="no" 
-                    marginheight="0" 
-                    marginwidth="0" 
-                    src="https://maps.google.com/maps?q=3QFH%2BWW%20Rundu&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                </iframe>
-            </div>
-        </div>
-    </section>
+<script>
+    function openTab(evt, tabName) {
+        // Hide all elements with class="tab-content"
+        var tabcontent = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
 
-    <footer>
-        <p>© 2026 Christ Love Ministries Rundu Branch | All Rights Reserved</p>
-        <p style="font-size: 0.8rem; opacity: 0.7;">Righteousness and Holiness for All Nations</p>
-    </footer>
+        // Remove "active" class from all tab buttons
+        var tablinks = document.getElementsByClassName("tab-btn");
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened it
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
 
 </body>
 </html>
